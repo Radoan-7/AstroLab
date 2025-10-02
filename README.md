@@ -8,8 +8,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/NASA%20Space%20Apps-2025-blue?logo=nasa" alt="NASA Space Apps"/>
   <img src="https://img.shields.io/badge/Challenge-Meteor%20Madness-orange?logo=meteor" alt="Meteor Madness"/>
-  <img src="https://img.shields.io/badge/Frontend-React%20⚛️-blue" alt="React"/>
-  <img src="https://img.shields.io/badge/License-MIT-green" alt="License"/>
 </p>
 
 ---

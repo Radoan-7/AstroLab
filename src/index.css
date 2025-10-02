@@ -1,0 +1,271 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Retro Pixel Space Theme - Yellow Command Terminal */
+    --background: 240 10% 5%;
+    --foreground: 51 100% 50%;
+
+    --card: 240 8% 10%;
+    --card-foreground: 51 100% 50%;
+
+    --popover: 240 8% 10%;
+    --popover-foreground: 51 100% 50%;
+
+    --primary: 51 100% 50%;
+    --primary-foreground: 240 10% 5%;
+
+    --secondary: 30 100% 50%;
+    --secondary-foreground: 240 10% 5%;
+
+    --muted: 240 5% 20%;
+    --muted-foreground: 51 80% 70%;
+
+    --accent: 180 100% 50%;
+    --accent-foreground: 240 10% 5%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 240 10% 5%;
+
+    --border: 51 100% 50%;
+    --input: 240 5% 15%;
+    --ring: 51 100% 50%;
+
+    --radius: 0.125rem;
+
+    /* Custom retro variables */
+    --glow-primary: 51 100% 50%;
+    --glow-secondary: 30 100% 50%;
+    --glow-accent: 180 100% 50%;
+    --scanline-opacity: 0.05;
+    --pixel-border: 2px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 3px
+      );
+    background-size: 100% 3px;
+    image-rendering: pixelated;
+  }
+
+  /* Pixel text rendering */
+  .pixel-text {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    image-rendering: pixelated;
+  }
+
+  /* Glowing effects */
+  .glow-primary {
+    text-shadow: 
+      0 0 10px hsl(var(--glow-primary) / 0.8),
+      0 0 20px hsl(var(--glow-primary) / 0.6),
+      0 0 30px hsl(var(--glow-primary) / 0.4);
+  }
+
+  .glow-border {
+    box-shadow: 
+      0 0 5px hsl(var(--glow-primary) / 0.6),
+      0 0 10px hsl(var(--glow-primary) / 0.4),
+      0 0 15px hsl(var(--glow-primary) / 0.2),
+      inset 0 0 5px hsl(var(--glow-primary) / 0.2);
+  }
+
+  /* Retro button styles */
+  .pixel-button {
+    border: 2px solid hsl(var(--primary));
+    background: hsl(var(--background));
+    color: hsl(var(--primary));
+    padding: 0.75rem 1.5rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.1s ease;
+    image-rendering: pixelated;
+    position: relative;
+  }
+
+  .pixel-button:hover {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: 
+      0 0 10px hsl(var(--glow-primary) / 0.8),
+      0 0 20px hsl(var(--glow-primary) / 0.6);
+    transform: translateY(-2px);
+  }
+
+  .pixel-button:active {
+    transform: translateY(0);
+  }
+
+  /* Dialogue box */
+  .dialogue-box {
+    border: 3px solid hsl(var(--primary));
+    background: hsl(var(--card));
+    box-shadow: 
+      0 0 15px hsl(var(--glow-primary) / 0.5),
+      inset 0 0 10px hsl(var(--background) / 0.5);
+    image-rendering: pixelated;
+  }
+
+  /* Scanline animation */
+  @keyframes scanline {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  .scanlines::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(255, 215, 0, 0.03) 0px,
+      transparent 2px
+    );
+    pointer-events: none;
+    z-index: 1000;
+    animation: scanline 8s linear infinite;
+  }
+
+  /* Pulse animation for important elements */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 
+        0 0 5px hsl(var(--glow-primary) / 0.6),
+        0 0 10px hsl(var(--glow-primary) / 0.4);
+    }
+    50% {
+      box-shadow: 
+        0 0 10px hsl(var(--glow-primary) / 0.8),
+        0 0 20px hsl(var(--glow-primary) / 0.6),
+        0 0 30px hsl(var(--glow-primary) / 0.4);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Retro CRT Scanline Effect */
+  .scanlines {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.1) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 10;
+    animation: scanline-move 8s linear infinite;
+  }
+
+  @keyframes scanline-move {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(4px);
+    }
+  }
+
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+    z-index: 9;
+  }
+
+  .scanline-overlay {
+    background:
+      repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.03) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(255, 255, 255, 0.03) 3px
+      );
+    animation: crt-flicker 0.15s infinite;
+  }
+
+  @keyframes crt-flicker {
+    0% { opacity: 0.97; }
+    50% { opacity: 1; }
+    100% { opacity: 0.97; }
+  }
+
+  .pixel-border {
+    border-width: 3px;
+    border-style: solid;
+    box-shadow:
+      0 0 0 1px rgba(0, 0, 0, 0.8),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.3s ease-out;
+  }
+}

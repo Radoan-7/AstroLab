@@ -1,0 +1,407 @@
+{
+  "acts": [
+    {
+      "act": 1,
+      "scene": 1,
+      "character": "narrator",
+      "dialogue": [
+        "YEAR 2025. DEEP SPACE SURVEILLANCE FACILITY.",
+        "A ROGUE ASTEROID EMERGES FROM THE DARKNESS.",
+        "DESIGNATION: IMPACTOR-2025."
+      ],
+      "choices": [
+        {
+          "text": "BEGIN MISSION",
+          "outcome": "mission_start",
+          "nextAct": 1,
+          "nextScene": 2
+        }
+      ]
+    },
+    {
+      "act": 1,
+      "scene": 2,
+      "character": "watcher",
+      "dialogue": [
+        "GREETINGS. I AM THE WATCHER.",
+        "OUR TELESCOPES DETECTED AN ANOMALY 48 HOURS AGO.",
+        "PRELIMINARY ANALYSIS SHOWS A 780-METER ASTEROID.",
+        "TRAJECTORY: EARTH-INTERSECTING ORBIT.",
+        "WE NEED TO ACT FAST. WHAT IS YOUR PRIORITY?"
+      ],
+      "choices": [
+        {
+          "text": "RUN ORBITAL SIMULATIONS IMMEDIATELY",
+          "outcome": "early_prediction",
+          "nextAct": 1,
+          "nextScene": 3
+        },
+        {
+          "text": "GATHER MORE TELESCOPE DATA FIRST",
+          "outcome": "late_prediction",
+          "nextAct": 1,
+          "nextScene": 4
+        },
+        {
+          "text": "ALERT THE GLOBAL DEFENSE COUNCIL NOW",
+          "outcome": "premature_alert",
+          "nextAct": 1,
+          "nextScene": 5
+        }
+      ],
+      "dataPoint": {
+        "type": "asteroid",
+        "value": "DIAMETER: 780M | VELOCITY: 25.3 KM/S"
+      }
+    },
+    {
+      "act": 1,
+      "scene": 3,
+      "character": "watcher",
+      "dialogue": [
+        "EXCELLENT DECISION. INITIALIZING ORBITAL MECHANICS...",
+        "COMPUTING KEPLER ELEMENTS... DONE.",
+        "IMPACT PROBABILITY: 87% IN 6 MONTHS.",
+        "PREDICTED IMPACT ZONE: NORTH PACIFIC OCEAN.",
+        "THIS IS A CODE RED SCENARIO."
+      ],
+      "choices": [
+        {
+          "text": "CONTINUE TO ACT 2",
+          "outcome": "prepared_path",
+          "nextAct": 2,
+          "nextScene": 1
+        }
+      ],
+      "dataPoint": {
+        "type": "asteroid",
+        "value": "IMPACT PROBABILITY: 87% | ETA: 183 DAYS"
+      }
+    },
+    {
+      "act": 1,
+      "scene": 4,
+      "character": "watcher",
+      "dialogue": [
+        "ACKNOWLEDGED. REQUESTING ADDITIONAL TELESCOPE TIME...",
+        "72 HOURS LATER: DATA CONFIRMED.",
+        "IMPACT PROBABILITY: 89% IN 5.5 MONTHS.",
+        "WE LOST VALUABLE TIME, BUT NOW WE HAVE PRECISION.",
+        "PREDICTED IMPACT: WESTERN AUSTRALIA."
+      ],
+      "choices": [
+        {
+          "text": "CONTINUE TO ACT 2",
+          "outcome": "cautious_path",
+          "nextAct": 2,
+          "nextScene": 1
+        }
+      ],
+      "dataPoint": {
+        "type": "asteroid",
+        "value": "IMPACT PROBABILITY: 89% | ETA: 167 DAYS"
+      }
+    },
+    {
+      "act": 1,
+      "scene": 5,
+      "character": "watcher",
+      "dialogue": [
+        "THE COUNCIL HAS BEEN ALERTED.",
+        "MEDIA REPORTS ARE ALREADY SPREADING...",
+        "PUBLIC PANIC IS RISING. MARKETS ARE CRASHING.",
+        "BUT WE BOUGHT POLITICAL MOMENTUM.",
+        "EMERGENCY FUNDING HAS BEEN APPROVED."
+      ],
+      "choices": [
+        {
+          "text": "CONTINUE TO ACT 2",
+          "outcome": "public_panic_path",
+          "nextAct": 2,
+          "nextScene": 1
+        }
+      ],
+      "dataPoint": {
+        "type": "asteroid",
+        "value": "PUBLIC ALERT LEVEL: CRITICAL"
+      }
+    },
+    {
+      "act": 2,
+      "scene": 1,
+      "character": "seeker",
+      "dialogue": [
+        "I AM THE SEEKER. USGS ENVIRONMENTAL ANALYSIS.",
+        "LET ME SHOW YOU WHAT THIS IMPACT MEANS.",
+        "IF IMPACTOR-2025 STRIKES THE OCEAN...",
+        "TSUNAMI WAVES: 30-50 METERS HIGH.",
+        "COASTAL CITIES: TOTAL DEVASTATION.",
+        "IF IT HITS LAND... WORSE."
+      ],
+      "choices": [
+        {
+          "text": "SHOW ME THE LAND IMPACT SCENARIO",
+          "outcome": "land_impact_focus",
+          "nextAct": 2,
+          "nextScene": 2
+        },
+        {
+          "text": "SHOW ME THE OCEAN IMPACT SCENARIO",
+          "outcome": "ocean_impact_focus",
+          "nextAct": 2,
+          "nextScene": 3
+        }
+      ],
+      "dataPoint": {
+        "type": "tsunami",
+        "value": "WAVE HEIGHT: 30-50M | RANGE: 500KM"
+      }
+    },
+    {
+      "act": 2,
+      "scene": 2,
+      "character": "seeker",
+      "dialogue": [
+        "LAND IMPACT ANALYSIS COMPLETE.",
+        "CRATER DIAMETER: 12 KILOMETERS.",
+        "SEISMIC EQUIVALENT: MAGNITUDE 8.5 EARTHQUAKE.",
+        "DUST CLOUD: GLOBAL TEMPERATURE DROP OF 3°C.",
+        "AGRICULTURE COLLAPSE. MASS STARVATION."
+      ],
+      "choices": [
+        {
+          "text": "WE MUST PREVENT THIS",
+          "outcome": "determined",
+          "nextAct": 3,
+          "nextScene": 1
+        }
+      ],
+      "dataPoint": {
+        "type": "crater",
+        "value": "CRATER: 12KM | SEISMIC: MAG 8.5"
+      }
+    },
+    {
+      "act": 2,
+      "scene": 3,
+      "character": "seeker",
+      "dialogue": [
+        "OCEAN IMPACT ANALYSIS COMPLETE.",
+        "TSUNAMI SIMULATION: WAVES REACH 5 CONTINENTS.",
+        "COASTAL MEGACITIES: NEW YORK, TOKYO, SHANGHAI...",
+        "ESTIMATED CASUALTIES: 50-100 MILLION.",
+        "GLOBAL ECONOMY: TOTAL COLLAPSE."
+      ],
+      "choices": [
+        {
+          "text": "WE MUST PREVENT THIS",
+          "outcome": "determined",
+          "nextAct": 3,
+          "nextScene": 1
+        }
+      ],
+      "dataPoint": {
+        "type": "tsunami",
+        "value": "CASUALTIES: 50-100M | WAVE RANGE: 5000KM"
+      }
+    },
+    {
+      "act": 3,
+      "scene": 1,
+      "character": "defender",
+      "dialogue": [
+        "I AM THE DEFENDER. PLANETARY PROTECTION ENGINEER.",
+        "WE HAVE THREE OPTIONS TO DEFLECT IMPACTOR-2025:",
+        "1. KINETIC IMPACTOR: HIT IT WITH A SPACECRAFT.",
+        "2. GRAVITY TRACTOR: SLOWLY PULL IT OFF COURSE.",
+        "3. NUCLEAR OPTION: DETONATE NEAR THE SURFACE.",
+        "CHOOSE WISELY. WE HAVE ONE SHOT."
+      ],
+      "choices": [
+        {
+          "text": "LAUNCH KINETIC IMPACTOR MISSION",
+          "outcome": "kinetic_choice",
+          "nextAct": 4,
+          "nextScene": 1
+        },
+        {
+          "text": "DEPLOY GRAVITY TRACTOR",
+          "outcome": "gravity_choice",
+          "nextAct": 4,
+          "nextScene": 2
+        },
+        {
+          "text": "AUTHORIZE NUCLEAR DEFLECTION",
+          "outcome": "nuclear_choice",
+          "nextAct": 4,
+          "nextScene": 3
+        }
+      ]
+    },
+    {
+      "act": 4,
+      "scene": 1,
+      "character": "defender",
+      "dialogue": [
+        "KINETIC IMPACTOR LAUNCHED.",
+        "6-MONTH JOURNEY TO INTERCEPT...",
+        "IMPACT IN 3... 2... 1...",
+        "DIRECT HIT! TRAJECTORY ALTERED BY 0.4 DEGREES.",
+        "CALCULATING NEW ORBIT...",
+        "SUCCESS! IMPACTOR-2025 WILL MISS EARTH BY 12,000 KM!"
+      ],
+      "choices": [
+        {
+          "text": "VIEW MISSION REPORT",
+          "outcome": "phoenix_path",
+          "nextAct": 5,
+          "nextScene": 1
+        }
+      ]
+    },
+    {
+      "act": 4,
+      "scene": 2,
+      "character": "defender",
+      "dialogue": [
+        "GRAVITY TRACTOR DEPLOYED.",
+        "HOVERING NEXT TO IMPACTOR-2025...",
+        "GRAVITATIONAL PULL: 0.0003 M/S DELTA-V.",
+        "THIS WILL TAKE TIME... MONTHS OF THRUST...",
+        "5 MONTHS LATER...",
+        "TRAJECTORY ADJUSTED. EARTH IS SAFE."
+      ],
+      "choices": [
+        {
+          "text": "VIEW MISSION REPORT",
+          "outcome": "silent_guardian_path",
+          "nextAct": 5,
+          "nextScene": 2
+        }
+      ]
+    },
+    {
+      "act": 4,
+      "scene": 3,
+      "character": "defender",
+      "dialogue": [
+        "NUCLEAR DEVICE DEPLOYED.",
+        "DETONATION IN 3... 2... 1...",
+        "BLAST SUCCESSFUL. ASTEROID SURFACE VAPORIZED.",
+        "RECOIL FORCE: TRAJECTORY SHIFTED.",
+        "BUT... FRAGMENTS DETECTED.",
+        "MULTIPLE SMALL IMPACTS INCOMING!"
+      ],
+      "choices": [
+        {
+          "text": "VIEW MISSION REPORT",
+          "outcome": "splintered_sky_path",
+          "nextAct": 5,
+          "nextScene": 3
+        }
+      ]
+    },
+    {
+      "act": 5,
+      "scene": 1,
+      "character": "narrator",
+      "dialogue": [
+        "MISSION COMPLETE: THE PHOENIX PATH",
+        "YOU ACTED DECISIVELY WITH THE KINETIC IMPACTOR.",
+        "EARTH IS SAVED. HUMANITY CELEBRATES.",
+        "YOU ARE REMEMBERED AS A HERO OF THE AGES.",
+        "THE STARS NO LONGER HOLD TERROR.",
+        "ONLY WONDER."
+      ],
+      "choices": [
+        {
+          "text": "VIEW TIMELINE REPORT",
+          "outcome": "end_phoenix",
+          "nextAct": 5,
+          "nextScene": 99
+        }
+      ]
+    },
+    {
+      "act": 5,
+      "scene": 2,
+      "character": "narrator",
+      "dialogue": [
+        "MISSION COMPLETE: THE SILENT GUARDIAN PATH",
+        "YOU CHOSE PATIENCE WITH THE GRAVITY TRACTOR.",
+        "A SLOW, METHODICAL APPROACH.",
+        "EARTH IS SAVED WITHOUT FANFARE.",
+        "THE PUBLIC NEVER KNEW HOW CLOSE IT WAS.",
+        "YOU ARE THE SILENT GUARDIAN."
+      ],
+      "choices": [
+        {
+          "text": "VIEW TIMELINE REPORT",
+          "outcome": "end_silent_guardian",
+          "nextAct": 5,
+          "nextScene": 99
+        }
+      ]
+    },
+    {
+      "act": 5,
+      "scene": 3,
+      "character": "narrator",
+      "dialogue": [
+        "MISSION COMPLETE: THE SPLINTERED SKY PATH",
+        "THE NUCLEAR OPTION FRAGMENTED THE ASTEROID.",
+        "SMALL IMPACTS HIT SIBERIA, AUSTRALIA, ATLANTIC.",
+        "CASUALTIES: MINIMAL. DAMAGE: REGIONAL.",
+        "NOT PERFECT, BUT HUMANITY SURVIVES.",
+        "LESSON LEARNED: NATURE IS UNPREDICTABLE."
+      ],
+      "choices": [
+        {
+          "text": "VIEW TIMELINE REPORT",
+          "outcome": "end_splintered_sky",
+          "nextAct": 5,
+          "nextScene": 99
+        }
+      ]
+    }
+  ],
+  "characters": {
+    "narrator": {
+      "name": "SYSTEM",
+      "title": "MISSION CONTROL",
+      "color": "cyan"
+    },
+    "watcher": {
+      "name": "THE WATCHER",
+      "title": "NASA NEO SCIENTIST",
+      "color": "yellow"
+    },
+    "seeker": {
+      "name": "THE SEEKER",
+      "title": "USGS GUARDIAN",
+      "color": "orange"
+    },
+    "defender": {
+      "name": "THE DEFENDER",
+      "title": "PLANETARY DEFENSE ENGINEER",
+      "color": "cyan"
+    }
+  },
+  "paths": {
+    "phoenix_path": {
+      "name": "THE PHOENIX PATH",
+      "description": "Swift action with kinetic impactor. Earth saved with minimal casualties.",
+      "badge": "🌌"
+    },
+    "silent_guardian_path": {
+      "name": "THE SILENT GUARDIAN",
+      "description": "Patient approach with gravity tractor. Quiet heroes saving the world.",
+      "badge": "🛰️"
+    },
+    "splintered_sky_path": {
+      "name": "THE SPLINTERED SKY",
+      "description": "Nuclear deflection caused fragmentation. Imperfect victory.",
+      "badge": "💥"
+    }
+  }
+}

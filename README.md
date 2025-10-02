@@ -18,7 +18,7 @@
 It blends **NASA’s asteroid data**, **AI-driven insights**, and **gamified storytelling** to raise awareness about the risks of meteor impacts and planetary defense.  
 
 Players face **branching choices**, each leading to unique outcomes (good, bad, or unexpected).  
-It’s not just a game — it’s a **data-powered planetary defense simulator**.  
+It’s not just a game, it’s a **data-powered planetary defense simulator**.  
 
 ---
 

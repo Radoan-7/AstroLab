@@ -11,7 +11,7 @@ export const NavigationBar = ({ currentMode, onModeChange }: NavigationBarProps)
           <div className="text-3xl">☄</div>
           <div>
             <h1 className="text-2xl font-bold pixel-text glow-primary">
-              ASTRODEFENDERS
+              ASTROLAB
             </h1>
             <p className="text-xs pixel-text text-muted-foreground">
               THE TALE OF IMPACTOR-2025

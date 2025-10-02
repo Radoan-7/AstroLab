@@ -5,9 +5,26 @@ import { SandboxMode } from "@/components/sandbox/SandboxMode";
 import { OrbitVisualizer } from "@/components/visualizer/OrbitVisualizer";
 import { DynamicBackground } from "@/components/DynamicBackground";
 
+// Story state type
+interface StoryState {
+  act: number;
+  scene: number;
+  outcome?: string;
+  dataPoint?: {
+    type: string;
+    value: string;
+  };
+}
+
 const Index = () => {
   const [mode, setMode] = useState<"story" | "sandbox">("story");
   const [threatLevel, setThreatLevel] = useState<'SAFE' | 'WARNING' | 'CRITICAL'>('SAFE');
+  
+  // State to track current story progress
+  const [storyState, setStoryState] = useState<StoryState>({
+    act: 1,
+    scene: 1,
+  });
 
   return (
     <div className="min-h-screen scanlines p-6 relative">
@@ -18,14 +35,20 @@ const Index = () => {
 
         <main className="max-w-6xl mx-auto flex flex-col gap-6">
           {mode === "story" ? (
-            <StoryEngine onThreatLevelChange={setThreatLevel} />
+            <StoryEngine 
+              onThreatLevelChange={setThreatLevel}
+              onStoryStateChange={setStoryState}
+            />
           ) : (
             <SandboxMode />
           )}
 
           {/* Oracle / OrbitVisualizer below all main content */}
           <div className="mt-6">
-            <OrbitVisualizer />
+            <OrbitVisualizer 
+              storyState={mode === "story" ? storyState : { act: 1, scene: 1 }}
+              timeScale={1}
+            />
           </div>
         </main>
 

@@ -13,9 +13,18 @@ import { fetchAsteroidData } from "@/api/nasa";
 interface StoryEngineProps {
   onThreatLevelChange?: (level: 'SAFE' | 'WARNING' | 'CRITICAL') => void;
   onSceneChange?: (act: number, scene: number) => void;
+  onStoryStateChange?: (state: {
+    act: number;
+    scene: number;
+    outcome?: string;
+    dataPoint?: {
+      type: string;
+      value: string;
+    };
+  }) => void;
 }
 
-export const StoryEngine = ({ onThreatLevelChange }: StoryEngineProps) => {
+export const StoryEngine = ({ onThreatLevelChange, onStoryStateChange }: StoryEngineProps) => {
   const [gameState, setGameState] = useState<GameState>({
     currentAct: 1,
     currentScene: 1,
@@ -82,6 +91,16 @@ export const StoryEngine = ({ onThreatLevelChange }: StoryEngineProps) => {
           },
         }));
       }
+
+      // Update story state for visualizer
+      if (onStoryStateChange) {
+        onStoryStateChange({
+          act,
+          scene,
+          outcome: gameState.choiceHistory[gameState.choiceHistory.length - 1],
+          dataPoint: node.dataPoint,
+        });
+      }
     } else {
       console.error(`Story node not found: Act ${act}, Scene ${scene}`);
     }
@@ -102,6 +121,16 @@ export const StoryEngine = ({ onThreatLevelChange }: StoryEngineProps) => {
       currentAct: choice.nextAct,
       currentScene: choice.nextScene || 1,
     }));
+
+    // Update story state immediately after choice
+    if (onStoryStateChange) {
+      onStoryStateChange({
+        act: choice.nextAct,
+        scene: choice.nextScene || 1,
+        outcome: choice.outcome,
+        dataPoint: currentNode?.dataPoint,
+      });
+    }
 
     // Check if this is an ending
     if (choice.outcome.startsWith("end_")) {
@@ -128,6 +157,14 @@ export const StoryEngine = ({ onThreatLevelChange }: StoryEngineProps) => {
     setShowDialogue(true);
     setShowChoices(false);
     toast.info("Starting new playthrough...");
+
+    // Reset visualizer to initial state
+    if (onStoryStateChange) {
+      onStoryStateChange({
+        act: 1,
+        scene: 1,
+      });
+    }
   };
 
   if (gameEnded) {

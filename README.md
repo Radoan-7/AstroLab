@@ -63,12 +63,12 @@ It’s not just a game — it’s a **data-powered planetary defense simulator**
 ---
 
 ## 🛠️ Tech Stack  
-- **Frontend**: React (Bolt-generated UI)  
+- **Frontend**: React (Lovable-generated UI)  
 - **Styling**: TailwindCSS + retro/pixel assets  
 - **Logic**: React hooks for story branching  
 - **APIs**: NASA NEO API + placeholder/mocked APIs  
 - **Media**: Sound effects, ambient tracks, character avatars  
-
+- **Hosting**: Vercel 
 ---
 
 ## 📸 Screenshots & Demo  
@@ -80,13 +80,29 @@ It’s not just a game — it’s a **data-powered planetary defense simulator**
 
 ---
 
-## 👥 Team – *AstroLab Guardians*  
-- 🌌 **Radoan** – Lead Developer & Game Systems  
-- 🎨 **Teammate X** – Design & Visual Assets  
-- 🧠 **Teammate Y** – AI Logic & Data Integration  
-- 📢 **Teammate Z** – Story Writing & Presentation  
+## 👥 Team – *AstroLab*  
+- 🌌 **Md. Radoan Bin Mahabubur** – Lead Developer,AI Logic, Game Systems & Backend
+- 🎨 **MD Habibullah** – Design, Visual Assets, Story Writing & Presentation  
 
 ---
+## 🌍 Future Improvements
+- 🔮 Real AI integration (instead of mock API).
+
+- 🌊 Global disaster modeling (impact tsunamis, climate effects).
+
+- 🎮 Multiplayer planetary defense missions.
+
+- 📱 Cross-platform deployment (Web + Mobile).
+
+## 🏆 Hackathon Submission
+- Event: NASA Space Apps Challenge 2025
+
+- Challenge: Meteor Madness 🌠
+
+- Status: Prototype (working demo + branching story simulation)
+
+## 📜 License
+MIT License – free to use, fork, and expand.
 
 ## 📂 Project Setup  
 ```bash
@@ -98,21 +114,5 @@ npm install
 
 # Run development server
 npm start
-🌍 Future Improvements
-🔮 Real AI integration (instead of mock API).
 
-🌊 Global disaster modeling (impact tsunamis, climate effects).
 
-🎮 Multiplayer planetary defense missions.
-
-📱 Cross-platform deployment (Web + Mobile).
-
-🏆 Hackathon Submission
-Event: NASA Space Apps Challenge 2025
-
-Challenge: Meteor Madness 🌠
-
-Status: Prototype (working demo + branching story simulation)
-
-📜 License
-MIT License – free to use, fork, and expand.

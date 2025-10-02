@@ -74,7 +74,7 @@ It’s not just a game — it’s a **data-powered planetary defense simulator**
 ## 📸 Screenshots & Demo  
 | Story Choice | AI Oracle | Simulation View |  
 |--------------|-----------|-----------------|  
-| ![Story](assets/story.png) | ![AI](assets/ai.png) | ![Sim](assets/sim.png) |  
+| ![Story](story.png) | ![AI](ai.png) | ![Sim](simulation.png) |  
 
 *(replace with actual screenshots)*  
 

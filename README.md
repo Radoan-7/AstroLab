@@ -104,7 +104,7 @@ MIT License – free to use, fork, and expand.
 ## 📂 Project Setup  
 ```bash
 # Clone repo
-git clone https://github.com/YourTeam/AstroLab.git
+git clone https://github.com/Radoan-7/AstroLab
 
 # Install dependencies
 npm install
